@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: qedir-pdf
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    plan: free

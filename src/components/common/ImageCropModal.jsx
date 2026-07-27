@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Cropper from "react-easy-crop";
+import "react-easy-crop/react-easy-crop.css";
 import ReactCrop from "react-image-crop";
 import "react-image-crop/dist/ReactCrop.css";
 import { Modal } from "./Modal";

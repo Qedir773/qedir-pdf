@@ -48,7 +48,15 @@ export function createRecognitionEngine({ lang, onInterimResult, onFinalResult, 
       if (!manualStop && retryCount < MAX_RETRIES) {
         retryCount += 1;
         setTimeout(() => {
-          if (!manualStop) recognition?.start();
+          // Build a fresh instance rather than restarting the ended one —
+          // some mobile browsers (Android Chrome in particular, where this
+          // auto-restart fires much more often than on desktop) can briefly
+          // keep delivering results from the old session, producing
+          // duplicated/overlapping transcripts.
+          if (!manualStop) {
+            recognition = build();
+            recognition.start();
+          }
         }, 300 * retryCount);
       } else {
         onStateChange?.(false);

@@ -17,7 +17,7 @@ export function SpeechToTextPanel({ editorRef }) {
   const { isListening, unsupported, start, stop } = useSpeechRecognition({
     lang: recognitionLang,
     onFinalResult: (text) => {
-      editorRef.current?.insertTextAtCursor(text + " ");
+      editorRef.current?.insertDictatedText(text + " ");
       setInterim("");
     },
     onInterimResult: setInterim,

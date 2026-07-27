@@ -1,0 +1,46 @@
+/* Scoped reset: workspace document content must always render as Arial 12pt (16px),
+   regardless of inline styles carried in from DOCX/AI/OCR content, and regardless
+   of the app chrome's Manrope/Inter fonts. */
+.editor-content,
+.editor-content * {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+}
+
+.editor-content {
+  min-height: 100%;
+  padding: 24px 32px;
+  color: #1a1a1a;
+  background: #ffffff;
+  border-radius: 12px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.editor-content:empty::before {
+  content: attr(data-placeholder);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.editor-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.editor-content h1,
+.editor-content h2,
+.editor-content h3 {
+  font-weight: 700;
+}
+
+.editor-content b,
+.editor-content strong {
+  font-weight: 700;
+}
+
+.editor-content i,
+.editor-content em {
+  font-style: italic;
+}

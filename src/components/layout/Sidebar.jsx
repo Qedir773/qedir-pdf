@@ -1,4 +1,4 @@
-import { FileStack, Mic, Sparkles, LayoutGrid, ChevronsLeft, ChevronsRight } from "lucide-react";
+import { FileStack, Mic, Sparkles, LayoutGrid, Layers, PenTool, Minimize2, History, QrCode, ChevronsLeft, ChevronsRight } from "lucide-react";
 import { useUiStore, SECTIONS } from "../../store/useUiStore";
 import { SidebarNavItem } from "./SidebarNavItem";
 import { useT } from "../../hooks/useT";
@@ -16,6 +16,11 @@ export function Sidebar() {
     { section: SECTIONS.VOICE, icon: Mic, label: az.nav.voice },
     { section: SECTIONS.AI, icon: Sparkles, label: az.nav.ai },
     { section: SECTIONS.COLLAGE, icon: LayoutGrid, label: az.nav.collage },
+    { section: SECTIONS.MERGE_SPLIT, icon: Layers, label: az.nav.mergeSplit },
+    { section: SECTIONS.SIGNATURE, icon: PenTool, label: az.nav.signature },
+    { section: SECTIONS.COMPRESS, icon: Minimize2, label: az.nav.compress },
+    { section: SECTIONS.RECENT, icon: History, label: az.nav.recent },
+    { section: SECTIONS.QR, icon: QrCode, label: az.nav.qr },
   ];
 
   return (

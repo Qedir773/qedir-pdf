@@ -7,6 +7,12 @@ export function downloadBlob(blob, filename) {
   anchor.click();
   document.body.removeChild(anchor);
   setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+  // Best-effort history entry for the "Son fayllar" section — never block or
+  // fail the actual download if IndexedDB is unavailable (private browsing etc).
+  import("../storage/recentFiles")
+    .then(({ addRecentFile }) => addRecentFile(blob, filename))
+    .catch(() => {});
 }
 
 export function downloadText(text, filename) {

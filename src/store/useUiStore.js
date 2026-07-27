@@ -5,6 +5,11 @@ export const SECTIONS = {
   VOICE: "voice",
   AI: "ai",
   COLLAGE: "collage",
+  MERGE_SPLIT: "merge-split",
+  SIGNATURE: "signature",
+  COMPRESS: "compress",
+  RECENT: "recent",
+  QR: "qr",
 };
 
 export const useUiStore = create((set) => ({

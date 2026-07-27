@@ -89,7 +89,7 @@ export const en = {
     voiceFemale: "Female",
     voiceMale: "Male",
     voiceFallback: "No voice matching the selected gender was found for this language; using the closest available voice.",
-    unsupportedBanner: "Speech recognition isn't supported in this browser. Please use Google Chrome or Microsoft Edge.",
+    unsupportedBanner: "Speech recognition isn't supported in this browser (Safari doesn't support it at all). Use Google Chrome or Microsoft Edge on desktop. On a phone, tap the text field below and use your keyboard's microphone (🎤) button to dictate instead.",
   },
   ai: {
     title: "AI Power Studio",

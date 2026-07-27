@@ -10,8 +10,8 @@ function loadImage(src) {
 export async function getCroppedImageFile(imageSrc, croppedAreaPixels, file) {
   const img = await loadImage(imageSrc);
   const canvas = document.createElement("canvas");
-  canvas.width = croppedAreaPixels.width;
-  canvas.height = croppedAreaPixels.height;
+  canvas.width = Math.round(croppedAreaPixels.width);
+  canvas.height = Math.round(croppedAreaPixels.height);
   const ctx = canvas.getContext("2d");
 
   ctx.drawImage(
@@ -22,10 +22,12 @@ export async function getCroppedImageFile(imageSrc, croppedAreaPixels, file) {
     croppedAreaPixels.height,
     0,
     0,
-    croppedAreaPixels.width,
-    croppedAreaPixels.height
+    canvas.width,
+    canvas.height
   );
 
-  const blob = await new Promise((resolve) => canvas.toBlob(resolve, file.type || "image/png"));
-  return new File([blob], file.name, { type: blob.type });
+  // Always re-encode as PNG (lossless) rather than the source format — cropping
+  // through a lossy JPEG/WEBP re-encode would degrade quality on every crop.
+  const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
+  return new File([blob], file.name, { type: "image/png" });
 }

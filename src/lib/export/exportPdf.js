@@ -28,6 +28,7 @@ export async function exportAsPdf(html, filename = "qedir-pdf-metn.pdf") {
       .set({
         margin: 10,
         filename,
+        image: { type: "png" },
         html2canvas: { scale: 2, backgroundColor: "#ffffff" },
         jsPDF: { unit: "pt", format: "a4", orientation: "portrait" },
       })

@@ -89,7 +89,7 @@ export const tr = {
     voiceFemale: "Kadın",
     voiceMale: "Erkek",
     voiceFallback: "Seçilen cinsiyete uygun ses bu dilde bulunamadı, en yakın mevcut ses kullanılıyor.",
-    unsupportedBanner: "Konuşma tanıma bu tarayıcıda desteklenmiyor. Lütfen Google Chrome veya Microsoft Edge kullanın.",
+    unsupportedBanner: "Konuşma tanıma bu tarayıcıda desteklenmiyor (Safari bunu hiç desteklemez). Bilgisayarda Google Chrome veya Microsoft Edge kullanın. Telefonda ise aşağıdaki metin alanına dokunup klavyenizdeki mikrofon (🎤) tuşuyla sesli yazabilirsiniz.",
   },
   ai: {
     title: "AI Power Studio",

@@ -89,7 +89,7 @@ export const az = {
     voiceFemale: "Qadın",
     voiceMale: "Kişi",
     voiceFallback: "Seçilmiş cinsə uyğun səs bu dildə tapılmadı, ən yaxın mövcud səs istifadə olunur.",
-    unsupportedBanner: "Nitq tanıma bu brauzerdə dəstəklənmir. Zəhmət olmasa Google Chrome və ya Microsoft Edge istifadə edin.",
+    unsupportedBanner: "Nitq tanıma bu brauzerdə dəstəklənmir (Safari bunu ümumiyyətlə dəstəkləmir). Kompüterdə Google Chrome və ya Microsoft Edge istifadə edin. Telefonda isə aşağıdakı mətn sahəsinə toxunub klaviaturanızdakı mikrofon (🎤) düyməsi ilə səsli yaza bilərsiniz.",
   },
   ai: {
     title: "AI Power Studio",

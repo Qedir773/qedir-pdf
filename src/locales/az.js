@@ -12,7 +12,7 @@ export const az = {
     signature: "Elektron İmza",
     compress: "PDF Sıxma",
     recent: "Son Fayllar",
-    qr: "QR Kod",
+    qr: "QR Kod Yarat",
     settings: "Ayarlar",
   },
   common: {

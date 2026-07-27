@@ -6,10 +6,11 @@ import { ExportMenu } from "./ExportMenu";
 import { copyPlainText } from "../../lib/utils/clipboard";
 import { stripImagesFromHtml } from "../../lib/text/stripImages";
 import { useToast } from "../../hooks/useToast";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 
 export function EditorToolbar({ editorRef }) {
   const toast = useToast();
+  const az = useT();
   const [confirmClearOpen, setConfirmClearOpen] = useState(false);
 
   async function handleCopy() {

@@ -1,15 +1,17 @@
 import { ListChecks, SpellCheck2, Languages, Wand2 } from "lucide-react";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 import clsx from "clsx";
 
-const ACTIONS = [
-  { key: "summarize", label: az.ai.summarize, icon: ListChecks },
-  { key: "grammar", label: az.ai.grammar, icon: SpellCheck2 },
-  { key: "translate", label: az.ai.translate, icon: Languages },
-  { key: "tone", label: az.ai.tone, icon: Wand2 },
-];
-
 export function AiActionButtons({ activeAction, onSelect }) {
+  const az = useT();
+
+  const ACTIONS = [
+    { key: "summarize", label: az.ai.summarize, icon: ListChecks },
+    { key: "grammar", label: az.ai.grammar, icon: SpellCheck2 },
+    { key: "translate", label: az.ai.translate, icon: Languages },
+    { key: "tone", label: az.ai.tone, icon: Wand2 },
+  ];
+
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
       {ACTIONS.map((a) => {

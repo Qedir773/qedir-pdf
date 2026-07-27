@@ -5,18 +5,19 @@ import { ImageToPdfPanel } from "./ImageToPdfPanel";
 import { PdfExtractPanel } from "./PdfExtractPanel";
 import { DocxToHtmlPanel } from "./DocxToHtmlPanel";
 import { OcrPanel } from "./OcrPanel";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 import clsx from "clsx";
-
-const TOOLS = [
-  { key: "image-to-pdf", label: az.convert.imageToPdf, icon: ImagePlus },
-  { key: "pdf-extract", label: az.convert.pdfExtract, icon: FileSearch },
-  { key: "docx-to-html", label: az.convert.docxToHtml, icon: FileType2 },
-  { key: "ocr", label: az.convert.ocr, icon: ScanText },
-];
 
 export function ConvertHub({ editorRef }) {
   const [activeTool, setActiveTool] = useState("image-to-pdf");
+  const az = useT();
+
+  const TOOLS = [
+    { key: "image-to-pdf", label: az.convert.imageToPdf, icon: ImagePlus },
+    { key: "pdf-extract", label: az.convert.pdfExtract, icon: FileSearch },
+    { key: "docx-to-html", label: az.convert.docxToHtml, icon: FileType2 },
+    { key: "ocr", label: az.convert.ocr, icon: ScanText },
+  ];
 
   return (
     <GlassPanel className="p-5">

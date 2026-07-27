@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { GlassPanel } from "../common/GlassPanel";
 import { Spinner } from "../common/Spinner";
+import { EditorPanel } from "../editor/EditorPanel";
 import { AiActionButtons } from "./AiActionButtons";
 import { TranslatorOptions } from "./TranslatorOptions";
 import { ToneSelector } from "./ToneSelector";
@@ -12,11 +13,12 @@ import { useSettingsStore } from "../../store/useSettingsStore";
 import { useKeyboardShortcuts } from "../../hooks/useKeyboardShortcuts";
 import { useToast } from "../../hooks/useToast";
 import { TRANSLATE_LANGUAGES } from "../../lib/utils/constants";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 
 export function AiStudio({ editorRef }) {
   const apiKey = useSettingsStore((s) => s.geminiApiKey);
   const toast = useToast();
+  const az = useT();
 
   const [activeAction, setActiveAction] = useState("summarize");
   const [targetLang, setTargetLang] = useState(TRANSLATE_LANGUAGES[1]);
@@ -29,6 +31,14 @@ export function AiStudio({ editorRef }) {
     if (selected) return selected;
     return editorRef.current?.getPlainText()?.trim() ?? "";
   }
+
+  const ERROR_MESSAGES = {
+    "missing-key": az.toast.apiKeyMissing,
+    network: az.toast.networkError,
+    "quota-exceeded": az.toast.quotaExceeded,
+    "invalid-key": az.toast.invalidKey,
+    generic: az.toast.genericAiError,
+  };
 
   async function runAction() {
     const text = getSourceText();
@@ -51,7 +61,7 @@ export function AiStudio({ editorRef }) {
       const output = await generateText(prompt, apiKey);
       setResult(output);
     } catch (err) {
-      toast.error(err instanceof GeminiError ? err.message : az.toast.genericAiError);
+      toast.error(err instanceof GeminiError ? (ERROR_MESSAGES[err.kind] ?? az.toast.genericAiError) : az.toast.genericAiError);
     } finally {
       setLoading(false);
     }
@@ -79,6 +89,8 @@ export function AiStudio({ editorRef }) {
       </div>
 
       <div className="space-y-5">
+        <EditorPanel editorRef={editorRef} />
+
         <AiActionButtons activeAction={activeAction} onSelect={setActiveAction} />
 
         {activeAction === "translate" && <TranslatorOptions targetLang={targetLang} onChange={setTargetLang} />}

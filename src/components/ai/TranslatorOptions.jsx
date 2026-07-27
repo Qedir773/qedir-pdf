@@ -1,8 +1,10 @@
 import { TRANSLATE_LANGUAGES } from "../../lib/utils/constants";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 import clsx from "clsx";
 
 export function TranslatorOptions({ targetLang, onChange }) {
+  const az = useT();
+
   return (
     <div>
       <p className="text-xs text-muted-2 mb-1.5">{az.ai.targetLang}</p>

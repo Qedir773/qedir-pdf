@@ -1,20 +1,22 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { FileStack, Mic, Sparkles, X } from "lucide-react";
+import { FileStack, Mic, Sparkles, LayoutGrid, X } from "lucide-react";
 import { useUiStore, SECTIONS } from "../../store/useUiStore";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 import clsx from "clsx";
-
-const NAV_ITEMS = [
-  { section: SECTIONS.CONVERT, icon: FileStack, label: az.nav.convert },
-  { section: SECTIONS.VOICE, icon: Mic, label: az.nav.voice },
-  { section: SECTIONS.AI, icon: Sparkles, label: az.nav.ai },
-];
 
 export function MobileSidebarDrawer() {
   const open = useUiStore((s) => s.mobileSidebarOpen);
   const setOpen = useUiStore((s) => s.setMobileSidebarOpen);
   const activeSection = useUiStore((s) => s.activeSection);
   const setActiveSection = useUiStore((s) => s.setActiveSection);
+  const az = useT();
+
+  const NAV_ITEMS = [
+    { section: SECTIONS.CONVERT, icon: FileStack, label: az.nav.convert },
+    { section: SECTIONS.VOICE, icon: Mic, label: az.nav.voice },
+    { section: SECTIONS.AI, icon: Sparkles, label: az.nav.ai },
+    { section: SECTIONS.COLLAGE, icon: LayoutGrid, label: az.nav.collage },
+  ];
 
   return (
     <AnimatePresence>

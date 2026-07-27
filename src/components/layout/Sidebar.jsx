@@ -1,20 +1,22 @@
-import { FileStack, Mic, Sparkles, ChevronsLeft, ChevronsRight } from "lucide-react";
+import { FileStack, Mic, Sparkles, LayoutGrid, ChevronsLeft, ChevronsRight } from "lucide-react";
 import { useUiStore, SECTIONS } from "../../store/useUiStore";
 import { SidebarNavItem } from "./SidebarNavItem";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 import clsx from "clsx";
-
-const NAV_ITEMS = [
-  { section: SECTIONS.CONVERT, icon: FileStack, label: az.nav.convert },
-  { section: SECTIONS.VOICE, icon: Mic, label: az.nav.voice },
-  { section: SECTIONS.AI, icon: Sparkles, label: az.nav.ai },
-];
 
 export function Sidebar() {
   const activeSection = useUiStore((s) => s.activeSection);
   const setActiveSection = useUiStore((s) => s.setActiveSection);
   const collapsed = useUiStore((s) => s.sidebarCollapsed);
   const toggleSidebar = useUiStore((s) => s.toggleSidebar);
+  const az = useT();
+
+  const NAV_ITEMS = [
+    { section: SECTIONS.CONVERT, icon: FileStack, label: az.nav.convert },
+    { section: SECTIONS.VOICE, icon: Mic, label: az.nav.voice },
+    { section: SECTIONS.AI, icon: Sparkles, label: az.nav.ai },
+    { section: SECTIONS.COLLAGE, icon: LayoutGrid, label: az.nav.collage },
+  ];
 
   return (
     <aside

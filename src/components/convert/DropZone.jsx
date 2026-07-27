@@ -1,11 +1,12 @@
 import { UploadCloud } from "lucide-react";
 import { useFileDrop } from "../../hooks/useFileDrop";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 import clsx from "clsx";
 
 export function DropZone({ accept, multiple = true, onFiles, hint }) {
   const { isDragging, dropHandlers, handleInputChange } = useFileDrop(onFiles);
   const inputId = `dropzone-input-${accept?.join("").replace(/[^a-z]/gi, "") ?? "any"}`;
+  const az = useT();
 
   return (
     <label

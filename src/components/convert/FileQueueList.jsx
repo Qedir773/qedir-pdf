@@ -1,8 +1,10 @@
 import { File, X, CheckCircle2, AlertCircle } from "lucide-react";
 import { ProgressBar } from "../common/ProgressBar";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 
 export function FileQueueList({ jobs, onRemove }) {
+  const az = useT();
+
   if (!jobs || jobs.length === 0) {
     return <p className="text-sm text-muted-2 text-center py-4">{az.convert.queueEmpty}</p>;
   }

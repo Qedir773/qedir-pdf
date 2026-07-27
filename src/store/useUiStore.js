@@ -4,6 +4,7 @@ export const SECTIONS = {
   CONVERT: "convert",
   VOICE: "voice",
   AI: "ai",
+  COLLAGE: "collage",
 };
 
 export const useUiStore = create((set) => ({

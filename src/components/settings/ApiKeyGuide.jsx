@@ -1,6 +1,8 @@
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 
 export function ApiKeyGuide() {
+  const az = useT();
+
   return (
     <div className="rounded-xl border border-border-glass bg-white/3 p-4 text-sm text-muted space-y-1.5">
       <p className="text-heading font-semibold mb-2">{az.settings.getKeyGuideTitle}</p>

@@ -7,12 +7,13 @@ import { docxToHtml } from "../../lib/docx/docxToHtml";
 import { sanitizeHtml } from "../../lib/text/sanitizeHtml";
 import { useToast } from "../../hooks/useToast";
 import { ACCEPTED_DOCX_TYPE } from "../../lib/utils/constants";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 
 export function DocxToHtmlPanel({ editorRef }) {
   const [loading, setLoading] = useState(false);
   const [previewHtml, setPreviewHtml] = useState("");
   const toast = useToast();
+  const az = useT();
 
   async function handleFiles(fileList) {
     const file = fileList[0];

@@ -19,7 +19,7 @@ function loadImageElement(file) {
   });
 }
 
-async function fileToPngDataUrl(file) {
+export async function fileToPngDataUrl(file) {
   const img = await loadImageElement(file);
   const canvas = document.createElement("canvas");
   canvas.width = img.naturalWidth;

@@ -3,20 +3,21 @@ import { Send } from "lucide-react";
 import { DropZone } from "./DropZone";
 import { ProgressBar } from "../common/ProgressBar";
 import { Button } from "../common/Button";
+import { ImageCropModal } from "../common/ImageCropModal";
 import { runOcr } from "../../lib/ocr/runOcr";
 import { useToast } from "../../hooks/useToast";
+import { useImageCropQueue } from "../../hooks/useImageCropQueue";
 import { ACCEPTED_IMAGE_TYPES } from "../../lib/utils/constants";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 
 export function OcrPanel({ editorRef }) {
   const [progress, setProgress] = useState(0);
   const [running, setRunning] = useState(false);
   const [text, setText] = useState("");
   const toast = useToast();
+  const az = useT();
 
-  async function handleFiles(fileList) {
-    const file = fileList[0];
-    if (!file) return;
+  async function runOnFile(file) {
     setRunning(true);
     setProgress(0);
     setText("");
@@ -29,6 +30,13 @@ export function OcrPanel({ editorRef }) {
     } finally {
       setRunning(false);
     }
+  }
+
+  const { pendingFile, enqueue, confirmCrop, skipCrop } = useImageCropQueue(runOnFile);
+
+  function handleFiles(fileList) {
+    const file = fileList[0];
+    if (file) enqueue([file]);
   }
 
   function handleSendToEditor() {
@@ -61,6 +69,8 @@ export function OcrPanel({ editorRef }) {
           </Button>
         </div>
       )}
+
+      <ImageCropModal file={pendingFile} onConfirm={confirmCrop} onSkip={skipCrop} />
     </div>
   );
 }

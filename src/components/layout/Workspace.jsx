@@ -6,6 +6,7 @@ import { EditorPanel } from "../editor/EditorPanel";
 const ConvertHub = lazy(() => import("../convert/ConvertHub").then((m) => ({ default: m.ConvertHub })));
 const VoiceStudio = lazy(() => import("../voice/VoiceStudio").then((m) => ({ default: m.VoiceStudio })));
 const AiStudio = lazy(() => import("../ai/AiStudio").then((m) => ({ default: m.AiStudio })));
+const CollagePanel = lazy(() => import("../collage/CollagePanel").then((m) => ({ default: m.CollagePanel })));
 
 function SectionFallback() {
   return (
@@ -26,8 +27,11 @@ export function Workspace() {
           {activeSection === SECTIONS.CONVERT && <ConvertHub editorRef={editorRef} />}
           {activeSection === SECTIONS.VOICE && <VoiceStudio editorRef={editorRef} />}
           {activeSection === SECTIONS.AI && <AiStudio editorRef={editorRef} />}
+          {activeSection === SECTIONS.COLLAGE && <CollagePanel />}
         </Suspense>
-        <EditorPanel editorRef={editorRef} />
+        {activeSection !== SECTIONS.AI && activeSection !== SECTIONS.COLLAGE && (
+          <EditorPanel editorRef={editorRef} />
+        )}
       </div>
     </main>
   );

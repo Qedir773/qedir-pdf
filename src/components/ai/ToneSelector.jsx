@@ -1,9 +1,10 @@
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 import clsx from "clsx";
 
-const TONES = [az.ai.toneFormal, az.ai.toneAcademic, az.ai.toneCasual];
-
 export function ToneSelector({ tone, onChange }) {
+  const az = useT();
+  const TONES = [az.ai.toneFormal, az.ai.toneAcademic, az.ai.toneCasual];
+
   return (
     <div>
       <p className="text-xs text-muted-2 mb-1.5">{az.ai.tone}</p>

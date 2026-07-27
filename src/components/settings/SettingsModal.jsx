@@ -6,7 +6,7 @@ import { ApiKeyGuide } from "./ApiKeyGuide";
 import { useUiStore } from "../../store/useUiStore";
 import { useSettingsStore } from "../../store/useSettingsStore";
 import { useToast } from "../../hooks/useToast";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 
 export function SettingsModal() {
   const open = useUiStore((s) => s.settingsOpen);
@@ -14,6 +14,7 @@ export function SettingsModal() {
   const savedKey = useSettingsStore((s) => s.geminiApiKey);
   const setGeminiApiKey = useSettingsStore((s) => s.setGeminiApiKey);
   const toast = useToast();
+  const az = useT();
 
   const [draftKey, setDraftKey] = useState(savedKey);
   const [visible, setVisible] = useState(false);

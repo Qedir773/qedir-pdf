@@ -4,7 +4,7 @@ import { useSpeechRecognition } from "../../hooks/useSpeechRecognition";
 import { useVoiceStore } from "../../store/useVoiceStore";
 import { useToast } from "../../hooks/useToast";
 import { SPEECH_LANGUAGES } from "../../lib/utils/constants";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 import clsx from "clsx";
 
 export function SpeechToTextPanel({ editorRef }) {
@@ -12,6 +12,7 @@ export function SpeechToTextPanel({ editorRef }) {
   const setRecognitionLang = useVoiceStore((s) => s.setRecognitionLang);
   const [interim, setInterim] = useState("");
   const toast = useToast();
+  const az = useT();
 
   const { isListening, unsupported, start, stop } = useSpeechRecognition({
     lang: recognitionLang,

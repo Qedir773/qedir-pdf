@@ -26,4 +26,5 @@ export const LOCALSTORAGE_KEYS = {
   editorContent: "omni.editor.content",
   settings: "omni.settings",
   uiPrefs: "omni.ui.prefs",
+  locale: "omni.locale",
 };

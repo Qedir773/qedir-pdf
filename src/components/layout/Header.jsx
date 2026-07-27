@@ -3,14 +3,16 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Settings } from "lucide-react";
 import { useUiStore, SECTIONS } from "../../store/useUiStore";
 import { LOGOS } from "../../assets/logos";
-import { az } from "../../locales/az";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useT } from "../../hooks/useT";
 
-const SECTION_ORDER = [SECTIONS.CONVERT, SECTIONS.VOICE, SECTIONS.AI];
+const SECTION_ORDER = [SECTIONS.CONVERT, SECTIONS.VOICE, SECTIONS.AI, SECTIONS.COLLAGE];
 
 export function Header() {
   const activeSection = useUiStore((s) => s.activeSection);
   const setMobileSidebarOpen = useUiStore((s) => s.setMobileSidebarOpen);
   const setSettingsOpen = useUiStore((s) => s.setSettingsOpen);
+  const az = useT();
 
   const [logoIndex, setLogoIndex] = useState(0);
 
@@ -56,6 +58,8 @@ export function Header() {
       </div>
 
       <div className="flex-1" />
+
+      <LanguageSwitcher />
 
       <button
         type="button"

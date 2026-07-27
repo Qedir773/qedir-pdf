@@ -3,12 +3,14 @@ import { FileImage } from "lucide-react";
 import { DropZone } from "./DropZone";
 import { FileQueueList } from "./FileQueueList";
 import { Button } from "../common/Button";
+import { ImageCropModal } from "../common/ImageCropModal";
 import { useConversionStore } from "../../store/useConversionStore";
 import { imagesToSinglePdf, imageToSinglePagePdf } from "../../lib/pdf/imagesToPdf";
 import { downloadBlob } from "../../lib/utils/download";
 import { ACCEPTED_IMAGE_TYPES } from "../../lib/utils/constants";
 import { useToast } from "../../hooks/useToast";
-import { az } from "../../locales/az";
+import { useImageCropQueue } from "../../hooks/useImageCropQueue";
+import { useT } from "../../hooks/useT";
 
 export function ImageToPdfPanel() {
   const allJobs = useConversionStore((s) => s.jobs);
@@ -17,12 +19,15 @@ export function ImageToPdfPanel() {
   const updateJob = useConversionStore((s) => s.updateJob);
   const removeJob = useConversionStore((s) => s.removeJob);
   const toast = useToast();
+  const az = useT();
 
   const [combine, setCombine] = useState(true);
   const [busy, setBusy] = useState(false);
 
+  const { pendingFile, enqueue, confirmCrop, skipCrop } = useImageCropQueue((file) => addJob(file, "image-to-pdf"));
+
   function handleFiles(fileList) {
-    Array.from(fileList).forEach((file) => addJob(file, "image-to-pdf"));
+    enqueue(Array.from(fileList));
   }
 
   async function handleConvert() {
@@ -84,6 +89,8 @@ export function ImageToPdfPanel() {
           <FileImage size={15} /> {az.convert.startConvert}
         </Button>
       </div>
+
+      <ImageCropModal file={pendingFile} onConfirm={confirmCrop} onSkip={skipCrop} />
     </div>
   );
 }

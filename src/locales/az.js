@@ -5,8 +5,9 @@ export const az = {
   },
   nav: {
     convert: "Convert Hub",
-    voice: "Voice Studio",
+    voice: "Səsdən mətinə",
     ai: "AI Studio",
+    collage: "Kolaj Studio",
     settings: "Ayarlar",
   },
   common: {
@@ -72,7 +73,7 @@ export const az = {
     queueEmpty: "Fayl növbəsi boşdur",
   },
   voice: {
-    title: "Voice Studio",
+    title: "Səsdən mətinə",
     subtitle: "Danışın, yazılsın. Yazın, səsləndirilsin.",
     sttTitle: "Nitqdən Mətnə",
     ttsTitle: "Mətndən Nitqə",
@@ -106,6 +107,21 @@ export const az = {
     apply: "Redaktora tətbiq et",
     insertNew: "Yeni mətn kimi əlavə et",
     discard: "İmtina et",
+  },
+  crop: {
+    title: "Şəkli kırpın",
+    zoom: "Yaxınlaşdırma",
+    confirm: "Kəs və davam et",
+    skip: "Kırpmadan davam et",
+    modeAuto: "Kırpma",
+    modeManual: "Əllə kəsmə",
+  },
+  collage: {
+    title: "Kolaj Studio",
+    subtitle: "Şəkil və PDF-ləri yükləyin, tək bir A4 və ya A5 sənəddə kolajlayın",
+    format: "Səhifə formatı",
+    build: "Kolaj yarat və yüklə",
+    queueCount: (n) => `Yüklənmiş fayl: ${n}`,
   },
   settings: {
     title: "Ayarlar",

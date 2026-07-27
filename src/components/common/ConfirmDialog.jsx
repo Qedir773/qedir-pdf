@@ -1,8 +1,10 @@
 import { Modal } from "./Modal";
 import { Button } from "./Button";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 
 export function ConfirmDialog({ open, title, body, onConfirm, onCancel }) {
+  const az = useT();
+
   return (
     <Modal open={open} onClose={onCancel} title={title} widthClass="max-w-sm">
       <p className="text-sm text-muted mb-6">{body}</p>

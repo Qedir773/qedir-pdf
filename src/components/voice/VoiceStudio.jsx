@@ -1,9 +1,11 @@
 import { GlassPanel } from "../common/GlassPanel";
 import { SpeechToTextPanel } from "./SpeechToTextPanel";
 import { TextToSpeechPanel } from "./TextToSpeechPanel";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 
 export function VoiceStudio({ editorRef }) {
+  const az = useT();
+
   return (
     <GlassPanel className="p-5">
       <div className="mb-5">

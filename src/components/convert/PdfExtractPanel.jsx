@@ -8,7 +8,7 @@ import { exportAsDocx } from "../../lib/export/exportDocx";
 import { sanitizeHtml } from "../../lib/text/sanitizeHtml";
 import { useToast } from "../../hooks/useToast";
 import { ACCEPTED_PDF_TYPE } from "../../lib/utils/constants";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 
 function textToHtml(text) {
   return text
@@ -23,6 +23,7 @@ export function PdfExtractPanel({ editorRef }) {
   const [extracting, setExtracting] = useState(false);
   const [extractedText, setExtractedText] = useState("");
   const toast = useToast();
+  const az = useT();
 
   async function handleFiles(fileList) {
     const file = fileList[0];

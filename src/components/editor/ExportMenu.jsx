@@ -3,13 +3,14 @@ import { Download, ChevronDown, FileText, FileType, FileDown } from "lucide-reac
 import { Button } from "../common/Button";
 import { exportAsTxt } from "../../lib/export/exportTxt";
 import { useToast } from "../../hooks/useToast";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 
 export function ExportMenu({ editorRef }) {
   const [open, setOpen] = useState(false);
   const [busy, setBusy] = useState(false);
   const menuRef = useRef(null);
   const toast = useToast();
+  const az = useT();
 
   useEffect(() => {
     function handleClickOutside(e) {

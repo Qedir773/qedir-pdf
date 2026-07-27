@@ -1,8 +1,10 @@
 import { CheckCheck, PlusCircle, X } from "lucide-react";
 import { Button } from "../common/Button";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 
 export function AiResultPanel({ text, onApply, onInsertNew, onDiscard }) {
+  const az = useT();
+
   return (
     <div className="space-y-3 rounded-xl border border-border-glass bg-white/3 p-4">
       <p className="text-xs font-semibold text-muted-2 uppercase tracking-wide">{az.ai.resultTitle}</p>

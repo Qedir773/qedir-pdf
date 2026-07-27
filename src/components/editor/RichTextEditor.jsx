@@ -1,7 +1,7 @@
 import { useEffect, useImperativeHandle, useRef } from "react";
 import { useEditorStore } from "../../store/useEditorStore";
 import { useDebouncedCallback } from "../../hooks/useDebounce";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 
 // Uncontrolled contentEditable: React never re-renders innerHTML on keystroke
 // (the classic cursor-jump bug). We only overwrite innerHTML on explicit
@@ -12,6 +12,7 @@ export const RichTextEditor = ({ editorRef }) => {
   const content = useEditorStore((s) => s.content);
   const setContent = useEditorStore((s) => s.setContent);
   const hasLoadedInitial = useRef(false);
+  const az = useT();
 
   const debouncedSetContent = useDebouncedCallback((html) => setContent(html), 400);
 

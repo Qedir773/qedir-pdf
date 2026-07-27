@@ -4,7 +4,7 @@ import { useSpeechSynthesis } from "../../hooks/useSpeechSynthesis";
 import { useSettingsStore } from "../../store/useSettingsStore";
 import { useVoiceStore } from "../../store/useVoiceStore";
 import { useToast } from "../../hooks/useToast";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 import clsx from "clsx";
 
 export function TextToSpeechPanel({ editorRef }) {
@@ -14,6 +14,7 @@ export function TextToSpeechPanel({ editorRef }) {
   const ttsVoiceGender = useSettingsStore((s) => s.ttsVoiceGender);
   const setTtsVoiceGender = useSettingsStore((s) => s.setTtsVoiceGender);
   const toast = useToast();
+  const az = useT();
 
   const { isSpeaking, isPaused, unsupported, voiceUnavailable, play, pause, resume, stop } = useSpeechSynthesis({
     lang: recognitionLang,

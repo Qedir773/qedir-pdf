@@ -1,8 +1,10 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
-import { az } from "../../locales/az";
+import { useT } from "../../hooks/useT";
 
 export function Modal({ open, onClose, title, children, widthClass = "max-w-lg" }) {
+  const az = useT();
+
   return (
     <AnimatePresence>
       {open && (

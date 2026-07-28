@@ -21,7 +21,6 @@ export function Sidebar() {
     { section: SECTIONS.MERGE_SPLIT, icon: Layers, label: az.nav.mergeSplit },
     { section: SECTIONS.SIGNATURE, icon: PenTool, label: az.nav.signature },
     { section: SECTIONS.COMPRESS, icon: Minimize2, label: az.nav.compress },
-    { section: SECTIONS.RECENT, icon: History, label: az.nav.recent },
     { section: SECTIONS.QR, icon: QrCode, label: az.nav.qr },
   ];
 
@@ -56,6 +55,13 @@ export function Sidebar() {
           <FileText size={19} className="shrink-0" strokeWidth={2} />
           {!collapsed && <span className="truncate">{az.nav.qerar}</span>}
         </a>
+        <SidebarNavItem
+          icon={History}
+          label={az.nav.recent}
+          collapsed={collapsed}
+          active={activeSection === SECTIONS.RECENT}
+          onClick={() => setActiveSection(SECTIONS.RECENT)}
+        />
       </nav>
 
       <div className="p-3 border-t border-border-glass">

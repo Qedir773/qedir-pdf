@@ -21,7 +21,6 @@ export function MobileSidebarDrawer() {
     { section: SECTIONS.MERGE_SPLIT, icon: Layers, label: az.nav.mergeSplit },
     { section: SECTIONS.SIGNATURE, icon: PenTool, label: az.nav.signature },
     { section: SECTIONS.COMPRESS, icon: Minimize2, label: az.nav.compress },
-    { section: SECTIONS.RECENT, icon: History, label: az.nav.recent },
     { section: SECTIONS.QR, icon: QrCode, label: az.nav.qr },
   ];
 
@@ -70,6 +69,16 @@ export function MobileSidebarDrawer() {
                 <FileText size={19} />
                 <span>{az.nav.qerar}</span>
               </a>
+              <button
+                onClick={() => setActiveSection(SECTIONS.RECENT)}
+                className={clsx(
+                  "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium",
+                  activeSection === SECTIONS.RECENT ? "bg-white/8 border border-border-glass text-heading" : "text-muted hover:bg-white/5"
+                )}
+              >
+                <History size={19} className={clsx(activeSection === SECTIONS.RECENT && "text-brand-violet")} />
+                <span className={clsx(activeSection === SECTIONS.RECENT && "text-gradient-brand font-semibold")}>{az.nav.recent}</span>
+              </button>
             </nav>
           </motion.div>
         </motion.div>

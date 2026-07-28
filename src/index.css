@@ -93,6 +93,13 @@ body {
     background-image: linear-gradient(90deg, var(--grad-blue), var(--grad-violet), var(--grad-orange));
   }
 
+  .text-gradient-blue-orange {
+    background-image: linear-gradient(90deg, var(--grad-blue), var(--grad-orange));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
   .btn-primary {
     display: inline-flex;
     align-items: center;

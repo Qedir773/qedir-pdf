@@ -57,7 +57,10 @@ export function Header() {
         </div>
       </div>
 
-      <div className="flex-1" />
+      <div className="flex-1 hidden md:flex items-center justify-center gap-3 text-sm font-bold text-gradient-blue-orange whitespace-nowrap">
+        <span>Created By</span>
+        <span className="tracking-[0.35em]">QƏDİR VAHİDOV</span>
+      </div>
 
       <LanguageSwitcher />
 

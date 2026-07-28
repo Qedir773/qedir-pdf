@@ -13,6 +13,7 @@ export const ru = {
     compress: "Сжатие PDF",
     recent: "Недавние файлы",
     qr: "QR-код",
+    qerar: "Документы решений",
     settings: "Настройки",
   },
   common: {

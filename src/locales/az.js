@@ -13,6 +13,7 @@ export const az = {
     compress: "PDF Sıxma",
     recent: "Son Fayllar",
     qr: "QR Kod Yarat",
+    qerar: "Qərar Sənədləri",
     settings: "Ayarlar",
   },
   common: {

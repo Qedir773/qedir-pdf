@@ -13,6 +13,7 @@ export const en = {
     compress: "Compress PDF",
     recent: "Recent Files",
     qr: "QR Code",
+    qerar: "Decision Documents",
     settings: "Settings",
   },
   common: {

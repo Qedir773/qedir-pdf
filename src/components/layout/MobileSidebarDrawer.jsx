@@ -1,8 +1,10 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { FileStack, Mic, Sparkles, LayoutGrid, Layers, PenTool, Minimize2, History, QrCode, X } from "lucide-react";
+import { FileStack, Mic, Sparkles, LayoutGrid, Layers, PenTool, Minimize2, History, QrCode, FileText, X } from "lucide-react";
 import { useUiStore, SECTIONS } from "../../store/useUiStore";
 import { useT } from "../../hooks/useT";
 import clsx from "clsx";
+
+const QERAR_TOOL_URL = "https://qerarlari-avtomatik-yazdirma.onrender.com";
 
 export function MobileSidebarDrawer() {
   const open = useUiStore((s) => s.mobileSidebarOpen);
@@ -59,6 +61,15 @@ export function MobileSidebarDrawer() {
                   </button>
                 );
               })}
+              <a
+                href={QERAR_TOOL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-muted hover:bg-white/5"
+              >
+                <FileText size={19} />
+                <span>{az.nav.qerar}</span>
+              </a>
             </nav>
           </motion.div>
         </motion.div>

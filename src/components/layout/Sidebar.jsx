@@ -1,8 +1,10 @@
-import { FileStack, Mic, Sparkles, LayoutGrid, Layers, PenTool, Minimize2, History, QrCode, ChevronsLeft, ChevronsRight } from "lucide-react";
+import { FileStack, Mic, Sparkles, LayoutGrid, Layers, PenTool, Minimize2, History, QrCode, FileText, ChevronsLeft, ChevronsRight } from "lucide-react";
 import { useUiStore, SECTIONS } from "../../store/useUiStore";
 import { SidebarNavItem } from "./SidebarNavItem";
 import { useT } from "../../hooks/useT";
 import clsx from "clsx";
+
+const QERAR_TOOL_URL = "https://qerarlari-avtomatik-yazdirma.onrender.com";
 
 export function Sidebar() {
   const activeSection = useUiStore((s) => s.activeSection);
@@ -41,6 +43,19 @@ export function Sidebar() {
             onClick={() => setActiveSection(item.section)}
           />
         ))}
+        <a
+          href={QERAR_TOOL_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={collapsed ? az.nav.qerar : undefined}
+          className={clsx(
+            "w-full flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors text-muted hover:text-heading hover:bg-white/5 border border-transparent",
+            collapsed && "justify-center px-0"
+          )}
+        >
+          <FileText size={19} className="shrink-0" strokeWidth={2} />
+          {!collapsed && <span className="truncate">{az.nav.qerar}</span>}
+        </a>
       </nav>
 
       <div className="p-3 border-t border-border-glass">

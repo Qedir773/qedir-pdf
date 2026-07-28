@@ -13,6 +13,7 @@ export const tr = {
     compress: "PDF Sıkıştırma",
     recent: "Son Dosyalar",
     qr: "QR Kod",
+    qerar: "Karar Belgeleri",
     settings: "Ayarlar",
   },
   common: {

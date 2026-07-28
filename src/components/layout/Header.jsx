@@ -57,9 +57,11 @@ export function Header() {
         </div>
       </div>
 
-      <div className="flex-1 hidden md:flex items-center justify-center gap-3 text-sm font-bold text-gradient-blue-orange whitespace-nowrap">
-        <span>Created By</span>
-        <span className="tracking-[0.35em]">QƏDİR VAHİDOV</span>
+      <div className="flex-1 hidden md:flex items-center justify-center">
+        <div className="flex items-center gap-3 rounded-full bg-gradient-brand px-4 py-1.5 text-sm font-bold text-white whitespace-nowrap shadow-lg">
+          <span>Created By</span>
+          <span className="tracking-[0.35em]">QƏDİR VAHİDOV</span>
+        </div>
       </div>
 
       <LanguageSwitcher />

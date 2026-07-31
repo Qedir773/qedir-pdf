@@ -64,7 +64,7 @@ export function ImageCropModal({ file, onConfirm, onSkip }) {
   }
 
   return (
-    <Modal open={!!file} onClose={onSkip} title={az.crop.title} widthClass="max-w-2xl">
+    <Modal open={!!file} onClose={onSkip} title={az.crop.title} widthClass="max-w-3xl">
       {imageSrc && (
         <div className="space-y-4">
           <div className="inline-flex rounded-lg border border-border-glass p-1 gap-1">
@@ -92,12 +92,13 @@ export function ImageCropModal({ file, onConfirm, onSkip }) {
 
           {mode === "auto" ? (
             <>
-              <div className="relative h-[320px] rounded-xl overflow-hidden bg-black/40">
+              <div className="relative h-[60vh] min-h-[380px] max-h-[560px] rounded-xl overflow-hidden bg-black/40">
                 <Cropper
                   image={imageSrc}
                   crop={crop}
                   zoom={zoom}
                   aspect={undefined}
+                  objectFit="contain"
                   onCropChange={setCrop}
                   onZoomChange={setZoom}
                   onCropComplete={(_, pixels) => {
@@ -120,9 +121,9 @@ export function ImageCropModal({ file, onConfirm, onSkip }) {
               </div>
             </>
           ) : (
-            <div className="flex items-center justify-center h-[320px] overflow-auto rounded-xl bg-black/40 p-2">
+            <div className="flex items-center justify-center h-[60vh] min-h-[380px] max-h-[560px] overflow-auto rounded-xl bg-black/40 p-2">
               <ReactCrop crop={manualCrop} onChange={setManualCrop} onComplete={setManualPixelCrop}>
-                <img ref={manualImgRef} src={imageSrc} alt="" className="max-h-[300px] w-auto" />
+                <img ref={manualImgRef} src={imageSrc} alt="" className="max-h-[54vh] max-w-full w-auto object-contain" />
               </ReactCrop>
             </div>
           )}

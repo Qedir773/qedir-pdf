@@ -14,6 +14,7 @@ export const az = {
     recent: "Son Fayllar",
     qr: "QR Kod Yarat",
     qerar: "Qərar hazırlama şablonu",
+    siviYarat: "SİVİ YARAT",
     settings: "Ayarlar",
   },
   common: {

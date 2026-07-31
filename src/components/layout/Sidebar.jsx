@@ -1,10 +1,11 @@
-import { FileStack, Mic, Sparkles, LayoutGrid, Layers, PenTool, Minimize2, History, QrCode, FileText, ChevronsLeft, ChevronsRight } from "lucide-react";
+import { FileStack, Mic, Sparkles, LayoutGrid, Layers, PenTool, Minimize2, History, QrCode, FileText, IdCard, ArrowUpRight, ChevronsLeft, ChevronsRight } from "lucide-react";
 import { useUiStore, SECTIONS } from "../../store/useUiStore";
 import { SidebarNavItem } from "./SidebarNavItem";
 import { useT } from "../../hooks/useT";
 import clsx from "clsx";
 
 const QERAR_TOOL_URL = "https://qerarlari-avtomatik-yazdirma.onrender.com";
+const SIVI_YARAT_URL = "https://sivi-yarat.onrender.com/";
 
 export function Sidebar() {
   const activeSection = useUiStore((s) => s.activeSection);
@@ -32,6 +33,24 @@ export function Sidebar() {
       )}
     >
       <nav className="flex-1 flex flex-col gap-1.5 p-3 pt-4">
+        <a
+          href={SIVI_YARAT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={collapsed ? az.nav.siviYarat : undefined}
+          className={clsx(
+            "w-full flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-bold bg-gradient-brand text-white hover:brightness-110 transition-[filter]",
+            collapsed && "justify-center px-0"
+          )}
+        >
+          <IdCard size={19} className="shrink-0" strokeWidth={2.4} />
+          {!collapsed && (
+            <>
+              <span className="truncate flex-1">{az.nav.siviYarat}</span>
+              <ArrowUpRight size={16} className="shrink-0" />
+            </>
+          )}
+        </a>
         {NAV_ITEMS.map((item) => (
           <SidebarNavItem
             key={item.section}

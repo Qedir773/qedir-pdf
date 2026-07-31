@@ -14,6 +14,7 @@ export const tr = {
     recent: "Son Dosyalar",
     qr: "QR Kod",
     qerar: "Karar Belgeleri",
+    siviYarat: "CV OLUŞTUR",
     settings: "Ayarlar",
   },
   common: {

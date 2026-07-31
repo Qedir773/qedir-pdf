@@ -14,6 +14,7 @@ export const en = {
     recent: "Recent Files",
     qr: "QR Code",
     qerar: "Decision Documents",
+    siviYarat: "CREATE CV",
     settings: "Settings",
   },
   common: {

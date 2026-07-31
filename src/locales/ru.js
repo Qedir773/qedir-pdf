@@ -14,6 +14,7 @@ export const ru = {
     recent: "Недавние файлы",
     qr: "QR-код",
     qerar: "Документы решений",
+    siviYarat: "СОЗДАТЬ РЕЗЮМЕ",
     settings: "Настройки",
   },
   common: {

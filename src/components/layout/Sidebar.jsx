@@ -5,7 +5,7 @@ import { useT } from "../../hooks/useT";
 import clsx from "clsx";
 
 const QERAR_TOOL_URL = "https://qerarlari-avtomatik-yazdirma.onrender.com";
-const SIVI_YARAT_URL = "https://sivi-yarat.onrender.com/";
+const SIVI_YARAT_URL = "http://92.5.96.82/";
 
 export function Sidebar() {
   const activeSection = useUiStore((s) => s.activeSection);

@@ -15,6 +15,7 @@ export const tr = {
     qr: "QR Kod",
     qerar: "Karar Belgeleri",
     siviYarat: "CV OLUŞTUR",
+    youtubeVideo: "YouTube videosu oluştur",
     settings: "Ayarlar",
   },
   common: {

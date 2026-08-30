@@ -15,6 +15,7 @@ export const en = {
     qr: "QR Code",
     qerar: "Decision Documents",
     siviYarat: "CREATE CV",
+    youtubeVideo: "Create a YouTube video",
     settings: "Settings",
   },
   common: {

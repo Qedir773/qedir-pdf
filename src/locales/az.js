@@ -15,6 +15,7 @@ export const az = {
     qr: "QR Kod Yarat",
     qerar: "Qərar hazırlama şablonu",
     siviYarat: "SİVİ YARAT",
+    youtubeVideo: "Youtube-yə video yaratmaq",
     settings: "Ayarlar",
   },
   common: {

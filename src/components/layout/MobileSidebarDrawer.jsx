@@ -1,11 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { FileStack, Mic, Sparkles, LayoutGrid, Layers, PenTool, Minimize2, History, QrCode, FileText, IdCard, ArrowUpRight, X } from "lucide-react";
+import { FileStack, Mic, Sparkles, LayoutGrid, Layers, PenTool, Minimize2, History, QrCode, FileText, IdCard, Video, ArrowUpRight, X } from "lucide-react";
 import { useUiStore, SECTIONS } from "../../store/useUiStore";
 import { useT } from "../../hooks/useT";
 import clsx from "clsx";
 
 const QERAR_TOOL_URL = "https://qerarlari-avtomatik-yazdirma.onrender.com";
 const SIVI_YARAT_URL = "http://92.5.96.82/";
+const YOUTUBE_STUDIO_URL = "https://tubeforge-studio.qedirvahidov.workers.dev";
 
 export function MobileSidebarDrawer() {
   const open = useUiStore((s) => s.mobileSidebarOpen);
@@ -52,6 +53,16 @@ export function MobileSidebarDrawer() {
               >
                 <IdCard size={19} />
                 <span className="flex-1">{az.nav.siviYarat}</span>
+                <ArrowUpRight size={16} />
+              </a>
+              <a
+                href={YOUTUBE_STUDIO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-bold text-white bg-red-600 hover:bg-red-500 transition-colors"
+              >
+                <Video size={19} />
+                <span className="flex-1">{az.nav.youtubeVideo}</span>
                 <ArrowUpRight size={16} />
               </a>
               {NAV_ITEMS.map((item) => {

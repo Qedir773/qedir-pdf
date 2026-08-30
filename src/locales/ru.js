@@ -15,6 +15,7 @@ export const ru = {
     qr: "QR-код",
     qerar: "Документы решений",
     siviYarat: "СОЗДАТЬ РЕЗЮМЕ",
+    youtubeVideo: "Создать видео для YouTube",
     settings: "Настройки",
   },
   common: {

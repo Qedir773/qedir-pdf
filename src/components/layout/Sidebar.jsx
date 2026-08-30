@@ -1,4 +1,4 @@
-import { FileStack, Mic, Sparkles, LayoutGrid, Layers, PenTool, Minimize2, History, QrCode, FileText, IdCard, ArrowUpRight, ChevronsLeft, ChevronsRight } from "lucide-react";
+import { FileStack, Mic, Sparkles, LayoutGrid, Layers, PenTool, Minimize2, History, QrCode, FileText, IdCard, Video, ArrowUpRight, ChevronsLeft, ChevronsRight } from "lucide-react";
 import { useUiStore, SECTIONS } from "../../store/useUiStore";
 import { SidebarNavItem } from "./SidebarNavItem";
 import { useT } from "../../hooks/useT";
@@ -6,6 +6,7 @@ import clsx from "clsx";
 
 const QERAR_TOOL_URL = "https://qerarlari-avtomatik-yazdirma.onrender.com";
 const SIVI_YARAT_URL = "http://92.5.96.82/";
+const YOUTUBE_STUDIO_URL = "https://tubeforge-studio.qedirvahidov.workers.dev";
 
 export function Sidebar() {
   const activeSection = useUiStore((s) => s.activeSection);
@@ -47,6 +48,24 @@ export function Sidebar() {
           {!collapsed && (
             <>
               <span className="truncate flex-1">{az.nav.siviYarat}</span>
+              <ArrowUpRight size={16} className="shrink-0" />
+            </>
+          )}
+        </a>
+        <a
+          href={YOUTUBE_STUDIO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={collapsed ? az.nav.youtubeVideo : undefined}
+          className={clsx(
+            "w-full flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-bold text-white bg-red-600 hover:bg-red-500 transition-colors",
+            collapsed && "justify-center px-0"
+          )}
+        >
+          <Video size={19} className="shrink-0" strokeWidth={2.4} />
+          {!collapsed && (
+            <>
+              <span className="truncate flex-1">{az.nav.youtubeVideo}</span>
               <ArrowUpRight size={16} className="shrink-0" />
             </>
           )}

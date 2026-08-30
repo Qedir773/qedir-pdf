@@ -16,8 +16,6 @@ export const ru = {
     qerar: "Документы решений",
     siviYarat: "СОЗДАТЬ РЕЗЮМЕ",
     youtubeVideo: "Создать видео для YouTube",
-    youtubeVideoDescription: "Откройте YouTube-студию и создайте видео шаг за шагом.",
-    youtubeVideoOpen: "Открыть студию",
     settings: "Настройки",
   },
   common: {

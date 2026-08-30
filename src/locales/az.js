@@ -16,6 +16,8 @@ export const az = {
     qerar: "Qərar hazırlama şablonu",
     siviYarat: "SİVİ YARAT",
     youtubeVideo: "Youtube-yə video yaratmaq",
+    youtubeVideoDescription: "YouTube istehsal studiyasını açın və videonuzu mərhələlərlə hazırlayın.",
+    youtubeVideoOpen: "Studiyanı aç",
     settings: "Ayarlar",
   },
   common: {

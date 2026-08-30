@@ -16,6 +16,8 @@ export const tr = {
     qerar: "Karar Belgeleri",
     siviYarat: "CV OLUŞTUR",
     youtubeVideo: "YouTube videosu oluştur",
+    youtubeVideoDescription: "YouTube prodüksiyon stüdyosunu açın ve videonuzu adım adım hazırlayın.",
+    youtubeVideoOpen: "Stüdyoyu aç",
     settings: "Ayarlar",
   },
   common: {

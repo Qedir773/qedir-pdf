@@ -16,6 +16,8 @@ export const en = {
     qerar: "Decision Documents",
     siviYarat: "CREATE CV",
     youtubeVideo: "Create a YouTube video",
+    youtubeVideoDescription: "Open the YouTube production studio and build your video step by step.",
+    youtubeVideoOpen: "Open studio",
     settings: "Settings",
   },
   common: {

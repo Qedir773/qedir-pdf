@@ -15,7 +15,7 @@ export const az = {
     qr: "QR Kod Yarat",
     qerar: "Qərar hazırlama şablonu",
     siviYarat: "SİVİ YARAT",
-    youtubeVideo: "Youtube-yə video yaratmaq",
+    youtubeVideo: "YouTube üçün video yarat",
     youtubeVideoDescription: "YouTube istehsal studiyasını açın və videonuzu mərhələlərlə hazırlayın.",
     youtubeVideoOpen: "Studiyanı aç",
     settings: "Ayarlar",

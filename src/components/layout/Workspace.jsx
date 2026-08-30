@@ -2,7 +2,7 @@ import { Suspense, lazy, useRef } from "react";
 import { useUiStore, SECTIONS } from "../../store/useUiStore";
 import { Spinner } from "../common/Spinner";
 import { EditorPanel } from "../editor/EditorPanel";
-import { Youtube, ArrowUpRight } from "lucide-react";
+import { Video, ArrowUpRight } from "lucide-react";
 import { useT } from "../../hooks/useT";
 
 const YOUTUBE_STUDIO_URL = "https://tubeforge-studio.qedirvahidov.workers.dev";
@@ -50,7 +50,7 @@ export function Workspace() {
           className="group flex flex-col sm:flex-row sm:items-center gap-4 rounded-2xl border border-red-500/30 bg-gradient-to-r from-red-600/20 via-panel/80 to-panel/60 p-5 hover:border-red-500/60 hover:shadow-xl hover:shadow-red-950/20 transition-all"
         >
           <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-red-600 text-white shadow-lg shadow-red-950/30">
-            <Youtube size={30} strokeWidth={2.2} />
+            <Video size={30} strokeWidth={2.2} />
           </span>
           <span className="min-w-0 flex-1">
             <strong className="block text-lg font-heading text-heading">{az.nav.youtubeVideo}</strong>

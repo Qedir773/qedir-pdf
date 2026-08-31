@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { FileStack, Mic, Sparkles, LayoutGrid, Layers, PenTool, Minimize2, History, QrCode, FileText, IdCard, Video, ArrowUpRight, X } from "lucide-react";
+import { FileStack, Mic, Sparkles, LayoutGrid, Layers, PenTool, Minimize2, History, QrCode, FileText, IdCard, Video, Building2, ArrowUpRight, X } from "lucide-react";
 import { useUiStore, SECTIONS } from "../../store/useUiStore";
 import { useT } from "../../hooks/useT";
 import clsx from "clsx";
@@ -7,6 +7,7 @@ import clsx from "clsx";
 const QERAR_TOOL_URL = "https://qerarlari-avtomatik-yazdirma.onrender.com";
 const SIVI_YARAT_URL = "http://92.5.96.82/";
 const YOUTUBE_STUDIO_URL = "https://tubeforge-studio.qedirvahidov.workers.dev";
+const SAMPLE_SITE_URL = "https://qedir.alwaysdata.net";
 
 export function MobileSidebarDrawer() {
   const open = useUiStore((s) => s.mobileSidebarOpen);
@@ -90,6 +91,16 @@ export function MobileSidebarDrawer() {
               >
                 <FileText size={19} />
                 <span>{az.nav.qerar}</span>
+              </a>
+              <a
+                href={SAMPLE_SITE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-emerald-100 bg-emerald-500/15 border border-emerald-400/25 hover:bg-emerald-500/25 hover:text-white transition-colors"
+              >
+                <Building2 size={19} className="text-emerald-300" />
+                <span className="flex-1">Nümunə sayt</span>
+                <ArrowUpRight size={16} className="text-emerald-300" />
               </a>
               <button
                 onClick={() => setActiveSection(SECTIONS.RECENT)}

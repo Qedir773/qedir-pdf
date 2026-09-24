@@ -15,7 +15,7 @@ test("əsas saytın sorğularını statik fayllara ötürür", async () => {
 test("inspektor sorğusunun yolunu, parametrini və gövdəsini saxlayır", async () => {
   const originalFetch = globalThis.fetch;
   globalThis.fetch = async (request, options) => {
-    assert.equal(request.url, "https://sandybrown-jellyfish-512142.hostingersite.com/inspektor/api/meta/regional-centers?x=1");
+    assert.equal(request.url, "https://inspektor-origin.qedir.com/inspektor/api/meta/regional-centers?x=1");
     assert.equal(request.method, "POST");
     assert.equal(request.headers.get("X-Forwarded-Host"), "qedir.com");
     assert.equal(await request.text(), "nümunə");

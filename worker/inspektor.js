@@ -1,4 +1,4 @@
-const INSPEKTOR_ORIGIN = "https://sandybrown-jellyfish-512142.hostingersite.com";
+const INSPEKTOR_ORIGIN = "https://inspektor-origin.qedir.com";
 
 export default {
   async fetch(request, env) {

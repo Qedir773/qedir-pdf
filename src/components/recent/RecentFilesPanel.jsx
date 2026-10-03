@@ -3,7 +3,6 @@ import { History, Download, Trash2, FileIcon } from "lucide-react";
 import { GlassPanel } from "../common/GlassPanel";
 import { Button } from "../common/Button";
 import { getRecentFiles, deleteRecentFile, clearRecentFiles } from "../../lib/storage/recentFiles";
-import { downloadBlob } from "../../lib/utils/download";
 import { useT } from "../../hooks/useT";
 
 function formatSize(bytes) {

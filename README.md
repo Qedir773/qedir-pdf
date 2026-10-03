@@ -1,16 +1,55 @@
-# React + Vite
+# QƏDİR.pdf
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Brauzerdə işləyən PDF, DOCX, OCR, səs, QR, kollaj və Gemini AI alətləri. Frontend Vite/React ilə yığılır, Cloudflare Worker isə statik faylları yayımlayır və `/inspektor` sorğularını Hostinger origin-ə ötürür.
 
-Currently, two official plugins are available:
+## Tələblər
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 24 (`>=22` dəstəklənir)
+- npm
 
-## React Compiler
+## Lokal işə salma
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm ci
+npm run dev
+```
 
-## Expanding the Oxlint configuration
+## Yoxlamalar
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+npm run lint
+npm test
+npm run build
+npm run deploy:dry
+```
+
+## Deployment arxitekturası
+
+| URL | Mənbə | Deploy |
+| --- | --- | --- |
+| `qedir.com/*` | `Qedir773/qedir-pdf` | Cloudflare Worker Builds |
+| `qedir.com/inspektor/*` | `Qedir773/inspektor_qovluq/sened-sistemi` | Hostinger avtomatik deploy |
+| `inspektor-origin.qedir.com` | Hostinger origin | Birbaşa istifadəçi interfeysi deyil |
+
+`worker/inspektor.js` `/inspektor` prefiksini qoruyaraq sorğunu `https://inspektor-origin.qedir.com` ünvanına proxy edir. Digər bütün sorğular `dist` qovluğundakı statik frontend-ə gedir.
+
+## Cloudflare konfiqurasiyası
+
+- Production branch: `master`
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+- Root directory: `/`
+- Worker adı: `qedir-pdf`
+- Statik fayllar: `dist`
+
+`master` push-u GitHub-da lint, test və dry-run build yoxlamalarını işlədir. Production deploy Cloudflare-in Git inteqrasiyası vasitəsilə ayrı icra olunur.
+
+## Hostinger konfiqurasiyası
+
+`inspektor_qovluq` reposunun `master` branch-i Hostinger-də avtomatik deploy olunur:
+
+- Root directory: `sened-sistemi`
+- Node.js: `24.x`
+- Public origin: `inspektor-origin.qedir.com`
+
+Bu repo Hostinger-ə deploy edilmir. `/inspektor` tətbiqində dəyişiklik yalnız `inspektor_qovluq` reposunda edilməlidir.
